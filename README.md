@@ -49,37 +49,3 @@ Run to test:
 ```sh
 $ pytest tests/
 ```
-
-
-
-
-
-
-Evaluation will be based on the following criteria:
-- Ability to use FastAPI to create a microservice.
-- Ability to create a project structure that is clean and easy to understand.
-- Ability to make the project ready for production.
-- Ability to use Docker to containerize the service.
-- Ability to use the MobileSam segmentation model.
-- Ability to create a RESTful API that allows users to interact with the model.
-
-## Additional informations
-
-- As long as the mandatory criteria are met, you can use any additional libraries you want.
-
-## Task Overview
-
-**Title:** MobileSam Segmentation Model Service
-
-**Expected Time to Complete:** 1-4 hours
-
-**Objective:** Develop a FastAPI service to deploy the MobileSam segmentation model, containerize the service with Docker, and ensure efficient interaction with the model on the CPU.
-
-**Background:**
-MobileSam is a machine learning model specialized in image segmentation on CPUs. Your task is to create a microservice that allows users to interact with this model via an API.
-
-## Task Description
-
-- **Develop a Microservice:** Use Python FastAPI framework to expose the MobileSam segmentation model as a RESTful API.
-  
-- **Model Integration:** Incorporate the MobileSam segmentation model into your service. It should process image inputs and return segmentation results.
