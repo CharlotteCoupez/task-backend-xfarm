@@ -27,7 +27,7 @@ To Start your container use:
 ```sh
 $ docker-compose up
 ```
-
+go to http://localhost:8000/docs to try the API Endpoint
 
 ### Connect to the FastAPI container
 ```sh
