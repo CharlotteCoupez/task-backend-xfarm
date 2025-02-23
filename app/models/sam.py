@@ -1,11 +1,12 @@
+""" SAM (Segmentation and Masking) model for image segmentation and object detection. """
 import os
-
 import numpy as np
 import torch
 from mobile_sam import SamAutomaticMaskGenerator, SamPredictor, sam_model_registry
 from PIL import Image
 
-from tools import box_prompt, format_results, point_prompt, fast_process
+# from app.tools.tools import box_prompt, format_results, point_prompt
+# from app.tools.tools_gradio import fast_process
 
 '''
 libraries:
@@ -34,10 +35,11 @@ def segment_everything(
     image,
     input_size=1024,
     better_quality=False,
-    withContours=True,
+    with_contours=True,
     use_retina=True,
     mask_random_color=True,
 ):
+    """ Segment an image using the SAM model. """
     global mask_generator
 
     input_size = int(input_size)
@@ -49,19 +51,21 @@ def segment_everything(
 
     nd_image = np.array(image)
     annotations = mask_generator.generate(nd_image)
+    return annotations
 
-    fig = fast_process(
-        annotations=annotations,
-        image=image,
-        device=device,
-        scale=(1024 // input_size),
-        better_quality=better_quality,
-        mask_random_color=mask_random_color,
-        bbox=None,
-        use_retina=use_retina,
-        withContours=withContours,
-    )
-    return fig
+    # this function is to overlays the segmentation masks and contours onto the image
+    # fig = fast_process(
+    #     annotations=annotations,
+    #     image=image,
+    #     device=device,
+    #     scale=(1024 // input_size),
+    #     better_quality=better_quality,
+    #     mask_random_color=mask_random_color,
+    #     bbox=None,
+    #     use_retina=use_retina,
+    #     withContours=with_contours,
+    # )
+    # return fig
 
 
 

@@ -1,0 +1,9 @@
+fastapi[standard]
+numpy
+torch
+torchvision
+timm
+opencv-python
+matplotlib
+pytest
+httpx
