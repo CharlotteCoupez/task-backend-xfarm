@@ -49,3 +49,9 @@ Run to test:
 ```sh
 $ pytest tests/
 ```
+
+### Use the API.
+in the task-backend-xfarm/ directory run:
+```sh
+$ python3 script_use_api.py
+```
